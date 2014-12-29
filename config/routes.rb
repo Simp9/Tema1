@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get "/articles/:id/edit", to: "articles#edit"
   get "/articles/:id", to: "articles#show"
   get "/comments/new", to: "comments#new"
-  get "/comments", to: "comments#index"
+  post "/comments", to: "comments#create"
 
   # You can have the root of your site routed with "root"
   root 'articles#index'

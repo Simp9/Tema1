@@ -2,4 +2,4 @@
 
 <%= render 'form_comment' %>
 
-<%= link_to 'Back', '/articles' %>
+<%= link_to 'Back', '/admin/articles' %>

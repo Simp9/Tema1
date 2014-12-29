@@ -1,23 +1,17 @@
 class CommentsController < ApplicationController
   def new
     @comment = Comment.new
+    @comment.article_id = params[:id]
+    @comment.save
   end
 
-  def create
-    @article = Article.where("id = ?", params[:id])
-    @comment = Comment.new
-    @comment.name = params[:comment][:name]
-    @comment.content = params[:comment][:content]
-    @comment.article_id = @article.id
-    if @comment.save
-      redirect_to '/articles'
-    else
-      render :new
-    end
+  def update
+    @comment = Comment.find(params[:id])
+    @comment.update_attributes(comment_params)
+    redirect_to '/articles'
   end
 
-  def index
-    #@comments = Comment.all
-    @comments = Comment.where("article_id = 9")
+  def comment_params
+    params.require(:comment).permit(:name, :content)
   end
 end

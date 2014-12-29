@@ -13,4 +13,6 @@
     <br />
   </div>
   <hr />
+<%= link_to "Add Comment", "/comments/new" %>
+<%= link_to "Show Comments", "/comments" %>
 <%= link_to 'Back', articles_path %>

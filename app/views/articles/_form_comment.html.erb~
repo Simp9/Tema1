@@ -12,6 +12,5 @@
   <br />
 
   <%= f.submit "Create" %>
-  <%= link_to "Add Comment", articles_path( params[:id] ) %>
   <br />
 <% end %>
