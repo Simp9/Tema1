@@ -1,0 +1,12 @@
+<h2>Comments</h2>
+
+<ul>
+<% @comments.each do |comment| %>
+    <li style="list-style-type: none">
+       <%= comment.name %>
+       <br />
+       <%= comment.content %>
+       <hr />
+    </li>
+<% end %>
+</ul>

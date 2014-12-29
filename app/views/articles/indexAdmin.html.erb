@@ -1,0 +1,26 @@
+<%= render 'form_search_admin' %>
+
+<h2>Articles</h2>
+
+<ul>
+  <% @articles.each do |article| %>
+    <li style="list-style-type: none">
+    <h4 style="text-align: center; color:red;">
+      <%= article.title %>
+      <%= ' - ' %>
+      <%= article.number_of_views %>
+      <%= ' Vizualizari ' %>
+      <br />
+    </h4>
+    <%= 'Article content:' %>
+    <hr />
+    <div style="width: 80%; margin-left: 10%;">
+      <%= article.content %>
+      <br />
+    </div>
+    <hr />
+    <%= link_to('Edit', { action: "edit", id: article.id }, method: "get" ) %>
+    <%= link_to('Delete', { action: "delete", id: article.id }, method: "delete" ) %>
+    </li>
+  <% end %>
+</ul>

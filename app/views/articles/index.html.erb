@@ -1,0 +1,27 @@
+<%= render 'form_search' %>
+
+<h2>Articles</h2>
+
+<ul>
+<% @articles.each do |article| %>
+    <li style="list-style-type: none">
+    <h4 style="text-align: center; color:red;">
+      <%= article.title %>
+      <%= ' - ' %>
+      <%= article.number_of_views %>
+      <%= ' Vizualizari ' %>
+      <br />
+    </h4>
+    <%= link_to('Article content:', { action: "show", id: article.id }, method: "get" ) %>
+    <hr />
+    <div style="width: 80%; margin-left: 10%;">
+      <%= article.content %>
+      <br />
+    </div>
+    <hr />
+    <%= link_to "Add Comment", new_comment_path( id: article.id) %>
+    <%= link_to "Show Comments", "/comments" %>
+    <br />
+    </li>
+<% end %>
+</ul>
